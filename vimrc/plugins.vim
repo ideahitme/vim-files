@@ -160,9 +160,9 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 
 " By default syntax-highlighting for Functions, Methods and Structs is disabled.
 " Let's enable them!
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
 
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_type_go = {  
