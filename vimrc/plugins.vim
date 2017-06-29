@@ -1,5 +1,6 @@
 " Load pathogen paths
 call pathogen#infect('~/.vim_go_runtime/bundle/forked/{}')
+call pathogen#infect('~/.vim_go_runtime/bundle/custom/{}')
 call pathogen#infect('~/.vim_go_runtime/bundle/pristine/{}')
 call pathogen#helptags()
 
@@ -137,7 +138,7 @@ let g:neocomplete#force_omni_input_patterns.go = '[^.[:digit:] *\t]\.'
 " Vim-go
 "------------------------------------------------------------------------------
 let g:go_fmt_fail_silently = 1
-let g:go_fmt_command = "gofmt" "Explicited the formater plugin (gofmt, goimports, goreturn...)
+let g:go_fmt_command = "goimports" "Explicited the formater plugin (gofmt, goimports, goreturn...)
 
 " Show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
