@@ -29,13 +29,15 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Initialize plugin system
 call plug#end()
 
-
 :nnoremap <C-P> :FZF <CR>
 :nnoremap fmt :RustFmt <CR>
 :nnoremap <C-_> :vsplit <CR>
 :nnoremap <C-L> :Buffers <CR>
 :nnoremap <C-S-F> :Find<Space> 
 :map <F2> :NERDTreeToggle<CR>
+:map gn :bn <CR>
+:map gp :bp <CR>
+:map ,<C-w> :bd <CR>
 
 
 au FileType rust nmap gd <Plug>(rust-def)
@@ -56,6 +58,7 @@ let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = "/usr/bin/python3"
 let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_skip_key='<C-k><C-d>'
+let g:multi_cursor_exit_from_visual_mode=0
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -66,3 +69,21 @@ colo dracula
 syntax on
 
 set term=screen-256color
+
+" Disable Deoplete when selecting multiple cursors starts
+function! Multiple_cursors_before()
+    if exists('*deoplete#disable')
+        exe 'call deoplete#disable()'
+    elseif exists(':NeoCompleteLock') == 2
+        exe 'NeoCompleteLock'
+    endif
+endfunction
+
+" Enable Deoplete when selecting multiple cursors ends
+function! Multiple_cursors_after()
+    if exists('*deoplete#enable')
+        exe 'call deoplete#enable()'
+    elseif exists(':NeoCompleteUnlock') == 2
+        exe 'NeoCompleteUnlock'
+    endif
+endfunction
