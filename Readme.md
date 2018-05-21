@@ -7,33 +7,19 @@ Based on vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+Copy the .vimrc file and do `:PlugInstall` 
 
-Requires rg for fuzzy term search:
 
-```bash
+Requirements:
 
-cargo install ripgrep 
-```
+NeoVim or Vim8
 
-Then copy the .vimrc file and do `:PlugInstall` 
-
-## Important commands
+Required plugins:
 
 ```bash
-F2 - toggle directory tree
-ctrl + / - vertical split
-ctrl + shift + f - fuzzy term search
-ctrl + p - fuzzy search for files
-f m t - rustfmt
-ctrl + l - list buffers
-gn - next buffer
-gp - previous buffer
-,ctrl+w - close buffer
-ctrl+d - multicursor
+sudo apt-get install python3-dev python3-pip exuberant-ctags
 
-:bd - close buffer
-ctrl + w -> q - close split
-
-
+# for autocompletion, even if vim8 is used
+pip3 install --upgrade neovim
 
 ```
