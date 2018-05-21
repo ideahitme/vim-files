@@ -23,3 +23,12 @@ sudo apt-get install python3-dev python3-pip exuberant-ctags
 pip3 install --upgrade neovim
 
 ```
+
+Required theme:
+```bash
+cd $HOME
+git clone git@github.com:HenryNewcomer/vim-theme-papaya.git
+mkdir -p ~/.vim/colors
+mv ~/vim-theme-papaya/papaya.vim ~/.vim/colors
+rm -rf ~/vim-theme-papaya
+```
