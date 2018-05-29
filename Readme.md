@@ -32,3 +32,16 @@ mkdir -p ~/.vim/colors
 mv ~/vim-theme-papaya/papaya.vim ~/.vim/colors
 rm -rf ~/vim-theme-papaya
 ```
+
+## Language support
+
+1. Rust
+
+```bash
+export PATH="$PATH:$HOME/.cargo/bin"
+
+rustup component add rustfmt-preview
+rustup component add rust-src
+cargo install racer
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" )
+```
