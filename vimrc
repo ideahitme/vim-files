@@ -135,7 +135,7 @@ let g:syntastic_check_on_wq = 0
 
 " Rust 
 let g:rustfmt_autosave = 1 
-let g:racer_cmd = "/home/yerken/.cargo/bin/racer"
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let g:tagbar_type_rust = {
 \ 'ctagstype' : 'rust',
@@ -155,3 +155,6 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 " Rust end
+"
+nnoremap <PageUp> <Nop>
+nnoremap <PageDown> <Nop>
